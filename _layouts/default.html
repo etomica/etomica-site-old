@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | prepend: site.url }}">
+	<title></title>
+</head>
+<body>
+	<div class="jumbotron jumbotron-fluid" id="title-banner">
+		<div class="container">
+			<img src="/img/logo-transparent.png" alt="" class="img-fluid">	
+		</div>
+	</div>
+
+    {{ content }}
+
+</body>
+</html>
