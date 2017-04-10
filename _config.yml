@@ -28,7 +28,6 @@ markdown: kramdown
 gems:
   - github-pages
   - jekyll-feed
-  - bootstrap
 exclude:
   - Gemfile
   - Gemfile.lock
