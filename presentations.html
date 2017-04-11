@@ -1,0 +1,26 @@
+---
+layout: default
+active: Presentations
+---
+
+<h1>Presentations</h1>
+<p>
+    The following files are PDFs of PowerPoint presentations used to explain the class structure of Etomica 
+    and/or its parts at a particular point in its development. This information does not necessarily describe 
+    accurately the current implementation of Etomica. Naturally, recent files are more relevant than older ones.
+</p>
+
+{% for pres in site.data.presentations %}
+{% assign pres.realdate = pres.date | date: '%d-%m-%y' %}
+{% endfor %}
+{% assign sorted = site.data.presentations | sort: 'realdate' | reverse %}
+
+{% for pres in sorted %}
+<div class="card pres-card">
+    <div class="card-block">
+        <h3 class="card-title"><a href="{{ pres.filename | prepend: 'doc/presentations/' | absolute_url }}">{{ pres.title }}<i class="fa fa-fw fa-file-pdf-o pres-icon"></i></a></h3>
+        <h5 class="card-subtitle text-muted">{{ pres.date | date_to_string }}</h5>
+        <p class="card-text pres-desc">{{ pres.description }}</p>
+    </div>
+</div>
+{% endfor %}

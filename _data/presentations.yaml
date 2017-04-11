@@ -1,0 +1,19 @@
+# - title: 
+#   date: 
+#   description: >
+#      # You can use multiple lines here because of the '>'. Make sure it is indented 2 spaces.
+#   filename:
+
+- title: Etomica API
+  date: 5 May 2005
+  description: >
+     This presentation gives an overview of the Etomica API and describes how the various classes work.
+  filename: Etomica_API.pdf
+
+- title: Etomica Meters and Data 
+  date: 23 Feb 2005
+  description: >
+     This presentation describes how data streams are created and used in Etomica. Data streams include Meters, Accumulators for
+     averaging or histogramming and DataSinks for displaying or outputting data. Meters are used to perform measurements.
+  filename: Meters_and_Data.pdf
+    

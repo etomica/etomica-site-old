@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title | escape }} • {{site.title | escape}}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | prepend: site.url }}">
-	<title></title>
+	<script src="https://use.fontawesome.com/da1e49c847.js"></script>
 </head>
 <body>
 	<div class="jumbotron jumbotron-fluid" id="title-banner">
@@ -21,12 +21,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-auto">
-				<div class="card">
+				<div class="card nav-card">
 					<div class="card-block">
 						<nav class="nav nav-pills flex-column">
                             {% include nav_link.html url="/" name="Home" %}
                             {% include nav_link.html url="/news" name="News" %}
-							<a href="" class="nav-link">GitHub</a>
+						</nav>
+					</div>
+				</div>
+
+				<div class="card nav-card">
+					<h6 class="card-header">Documentation</h6>
+					<div class="card-block">
+						<nav class="nav nav-pills flex-column">
+							<a class="nav-link" href="http://etomica.github.io/javadoc">Javadoc</a>
+                            {% include nav_link.html url="/presentations" name="Presentations" %}
+
+
 						</nav>
 					</div>
 				</div>

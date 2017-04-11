@@ -10,9 +10,12 @@ title: News
 <div class="card news-post">
      <div class="card-block">
          <a href="{{ post.url | absolute_url }}"><h3 class="card-title">{{ post.title }}</h3></a>          
-         <h5 class="card-subtitle text-muted">{{ post.author }}</h5>
+         <h5 class="card-subtitle text-muted">
+             <span class="post-author"><i class="fa fa-user"></i> {{ post.author }}</span>
+             <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
+         </h5>
          <div class="post-excerpt">{{ post.excerpt }}</div>
-         <a href="{{ post.url | absolute_url }}">Read more</a>          
+         <a class="card-link" href="{{ post.url | absolute_url }}">Read more</a>          
      </div>
 </div>
 
