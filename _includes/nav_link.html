@@ -1,1 +1,2 @@
-<a href="" class="nav-link"></a>
+<a href="{{ include.url | absolute_url }}" 
+    class="nav-link {% if page.active == include.name %}active{% endif %}">{{ include.name }}</a>

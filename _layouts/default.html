@@ -24,17 +24,20 @@
 				<div class="card">
 					<div class="card-block">
 						<nav class="nav nav-pills flex-column">
-							<a href="" class="nav-link">Home</a>
-							<a href="" class="nav-link">News</a>
+                            {% include nav_link.html url="/" name="Home" %}
+                            {% include nav_link.html url="/news" name="News" %}
 							<a href="" class="nav-link">GitHub</a>
 						</nav>
 					</div>
 				</div>
 			</div>
+
+			<div class="col">
+				{{ content }}
+			</div>
 		</div>
 	</div>
 
-    {{ content }}
-
+	{% include footer.html %}
 </body>
 </html>

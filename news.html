@@ -1,0 +1,18 @@
+---
+layout: default
+active: News
+title: News
+---
+
+<h1>News</h1>
+
+{% for post in site.posts %}
+<div class="card">
+     <div class="card-block">
+         <a href="{{ post.url | absolute_url }}"><h3 class="card-title">{{ post.title }}</h3></a>          
+         <h5 class="card-subtitle text-muted">{{ post.author }}</h5>
+         <p class="card-text">{{ post.summary }}</p>
+     </div>
+</div>
+
+{% endfor %}
