@@ -13,14 +13,14 @@ active: Presentations
 {% for pres in site.data.presentations %}
 {% assign pres.realdate = pres.date | date: '%d-%m-%y' %}
 {% endfor %}
-{% assign sorted = site.data.presentations | sort: 'realdate' | reverse %}
+{% assign sorted = site.data.presentations | sort: 'realdate' %}
 
 {% for pres in sorted %}
 <div class="card pres-card">
     <div class="card-block">
         <h3 class="card-title"><a href="{{ pres.filename | prepend: 'doc/presentations/' | absolute_url }}">{{ pres.title }}<i class="fa fa-fw fa-file-pdf-o pres-icon"></i></a></h3>
         <h5 class="card-subtitle text-muted">{{ pres.date | date_to_string }}</h5>
-        <p class="card-text pres-desc">{{ pres.description }}</p>
+        <div class="card-text pres-desc">{{ pres.description | markdownify }}</div>
     </div>
 </div>
 {% endfor %}

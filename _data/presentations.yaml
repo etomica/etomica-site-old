@@ -1,19 +1,54 @@
 # - title: 
 #   date: 
-#   description: >
-#      # You can use multiple lines here because of the '>'. Make sure it is indented 2 spaces.
+#   description: |
+#      # You can use multiple lines here because of the '>'. Make sure it is indented 2 spaces. You can also use markdown (lists, bold, etc.)
 #   filename:
 
 - title: Etomica API
   date: 5 May 2005
-  description: >
+  description: |
      This presentation gives an overview of the Etomica API and describes how the various classes work.
   filename: Etomica_API.pdf
 
 - title: Etomica Meters and Data 
   date: 23 Feb 2005
-  description: >
+  description: |
      This presentation describes how data streams are created and used in Etomica. Data streams include Meters, Accumulators for
      averaging or histogramming and DataSinks for displaying or outputting data. Meters are used to perform measurements.
   filename: Meters_and_Data.pdf
     
+- title: Etomica Overview
+  date: 9 Feb 2005
+  description: |
+    This presentation gives an overview of the Etomica components and how they can be used to construct a simulation.
+
+    *lecture 3 from CE 412*
+  filename: simulation_3-etomica.pdf 
+
+- title: All about Potentials presentation
+  date: 23 Jan 2003
+  description: |
+     * The Potential class specifies how molecules/atoms interact in Etomica.
+
+     * This presentation gives an overview of its design.
+  filename: Etomica_Potentials.pdf
+
+- title: All about Species presentation
+  date: 14 Dec 2001
+  description: |
+     * Species and its related classes form the data structure for holding information about atoms and molecules.
+     * This describes its arrangement and part of the formulation for iterating over atoms and groups of atoms.
+  filename: Etomica_Species.pdf
+
+- title: All about Meters presentation
+  date: 08 Jun 2001
+  description: |
+    * The Meter class is used to perform measurements in Etomica.
+    * This presentation gives an overview of its design.
+  filename: Etomica_Meters.pdf
+
+- title: The M.S. thesis of Bryan Mihalick
+  date: 23 Feb 2001
+  description: |
+    It describes the general structure of the Etomica API and the use of the development environment.
+  filename: MihalickMS.pdf
