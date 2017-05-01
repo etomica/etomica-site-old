@@ -26,7 +26,7 @@ github_username: etomica
 # Build settings
 markdown: kramdown
 gems:
-  - github-pages
+  - bootstrap
   - jekyll-feed
 exclude:
   - Gemfile

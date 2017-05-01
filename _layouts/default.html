@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if page.title %}{{ page.title | escape }} • {{site.title | escape}}{% else %}{{ site.title | escape }}{% endif %}</title>
-	<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | prepend: site.url }}">
-	<script src="https://use.fontawesome.com/da1e49c847.js"></script>
-</head>
-<body>
-	<div class="jumbotron jumbotron-fluid" id="title-banner">
-		<div class="container">
-			<img src="/img/logo-transparent.png" alt="" class="img-fluid">	
-		</div>
-	</div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title %}{{ page.title | escape }} • {{site.title | escape}}{% else %}{{ site.title | escape }}{% endif %}</title>
+        <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-	<div class="container">
-		<div class="row">
-			<div class="col-auto">
-				<div class="card nav-card">
-					<div class="card-block">
-						<nav class="nav nav-pills flex-column">
-                            {% include nav_link.html url="/" name="Home" %}
-                            {% include nav_link.html url="/news" name="News" %}
-						</nav>
-					</div>
-				</div>
+        <link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | prepend: site.url }}">
+        <script src="https://use.fontawesome.com/da1e49c847.js"></script>
+    </head>
 
-				<div class="card nav-card">
-					<h6 class="card-header">Documentation</h6>
-					<div class="card-block">
-						<nav class="nav nav-pills flex-column">
-							<a class="nav-link" href="http://etomica.github.io/javadoc" target="_blank">Javadoc</a>
+    <body>
+        <div class="jumbotron jumbotron-fluid" id="title-banner">
+            <div class="container">
+                <nav class="nav nav-pills d-flex flex-sm-column flex-md-row justify-content-end align-items-center">
+                    <img src="/img/logo-transparent.png" alt="" class="img-fluid mr-auto">
+                    {% include nav_link.html url="/" name="Home" %} 
+                    {% include nav_link.html url="/news" name="News" %}
+                    <div class="dropdown">
+                        <a href="#" class="nav-link dropdown dropdown-toggle {% if page.active == 'documentation' %}active{% endif %}" data-toggle="dropdown">Documentation</a>
+                        <div class="dropdown-menu">
+                            <a href="https://etomica.github.io/javadoc" class="dropdown-item" target="_blank">Javadoc</a>
+                            <a href="/presentations" class="dropdown-item">Presentations</a>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="card nav-card">
+                    <h6 class="card-header">Documentation</h6>
+                    <div class="card-block">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="http://etomica.github.io/javadoc" target="_blank">Javadoc</a>
                             {% include nav_link.html url="/presentations" name="Presentations" %}
 
+                        </nav>
+                    </div>
+                </div>
 
-						</nav>
-					</div>
-				</div>
-			</div>
+                <div class="col">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
 
-			<div class="col">
-				{{ content }}
-			</div>
-		</div>
-	</div>
+        {% include footer.html %}
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+                                                                       crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+                                                                                           crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+                                                                                                  crossorigin="anonymous">
+        </script>
+    </body>
 
-	{% include footer.html %}
-</body>
 </html>
